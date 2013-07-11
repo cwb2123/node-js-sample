@@ -3,13 +3,16 @@ var fs = require('fs');
 var indexFile = "index.html";
 
 var app = express.createServer(express.logger());
-
+var buffer = new Buffer(256);
+ 
 app.get('/', function(request, response) {
 
     fs.readFile(indexFile,function(err, data){
 	if(err) throw err;
 	console.log(data);
+	buffer.write(data);
     });
+
     response.send("YO'");
 
 
