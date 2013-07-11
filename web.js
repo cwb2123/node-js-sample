@@ -8,11 +8,11 @@ app.get('/', function(request, response) {
     var buffer = new Buffer();
 	fs.readFileSync(indexFile,function (err,data){
 	    if(err) throw err;
-	    buffer.write(data);
+            response.send(data);
 	});
 	
 
-    response.send(buffer.toString());
+//  response.send(buffer.toString());
 });
 
 var port = process.env.PORT || 5000;
