@@ -10,7 +10,7 @@ app.get('/', function(request, response) {
 	    if(err) throw err;
 	    buffer.write(data);
 	});
-    response.send(buffer);	
+    response.send(buffer.toString());
 
 
 });
