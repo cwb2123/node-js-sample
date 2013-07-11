@@ -13,7 +13,7 @@ app.get('/', function(request, response) {
 	buffer.write(data);
     });
 
-    response.send("YO'");
+    response.send(buffer.toString());
 
 
 });
